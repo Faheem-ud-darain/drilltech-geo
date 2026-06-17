@@ -220,6 +220,7 @@ const RIG_DATABASE = {
   b57: {
     name: "Mobile Drill B57",
     feature: "SPT Automatic Hammer",
+    image: "/machines/b57.jpeg",
     pulldown: "20,000 lbs",
     pulldownPercent: 63,
     retract: "30,000 lbs",
@@ -235,6 +236,7 @@ const RIG_DATABASE = {
   cme45: {
     name: "CME 45B",
     feature: "EPA Tier-4 Final Certified",
+    image: "/machines/cme45b.jpeg",
     pulldown: "13,650 lbs",
     pulldownPercent: 43,
     retract: "19,600 lbs",
@@ -250,6 +252,7 @@ const RIG_DATABASE = {
   b53: {
     name: "Mobile Drill B53",
     feature: "Angle Drilling Capable",
+    image: "/machines/b53.jpeg",
     pulldown: "31,400 lbs",
     pulldownPercent: 100,
     retract: "24,000 lbs",
@@ -265,6 +268,7 @@ const RIG_DATABASE = {
   joy12: {
     name: "JOY12B",
     feature: "Double Feed Oil Cylinders",
+    image: "/machines/joy12b.jpeg",
     pulldown: "24,700 lbs (110 kN)",
     pulldownPercent: 78,
     retract: "24,700 lbs (110 kN)",
@@ -280,6 +284,7 @@ const RIG_DATABASE = {
   cme75: {
     name: "CME 75",
     feature: "Highest Fleet Spindle Torque",
+    image: "/machines/cme75.jpeg",
     pulldown: "20,000 lbs",
     pulldownPercent: 63,
     retract: "30,000 lbs",
@@ -979,6 +984,27 @@ function setupSpecsComparator() {
       const data = RIG_DATABASE[rigKey];
       
       if (data) {
+        // Crossfade the rig photo
+        const rigPhoto = document.getElementById("rig-photo");
+        if (rigPhoto) {
+          gsap.to(rigPhoto, {
+            opacity: 0,
+            scale: 0.95,
+            duration: 0.25,
+            ease: "power2.in",
+            onComplete: () => {
+              rigPhoto.src = data.image;
+              rigPhoto.alt = data.name;
+              gsap.to(rigPhoto, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.4,
+                ease: "power2.out"
+              });
+            }
+          });
+        }
+
         document.getElementById("rig-display-name").textContent = data.name;
         document.getElementById("rig-notable-feature").textContent = data.feature;
         document.getElementById("spec-pulldown-val").textContent = data.pulldown;
@@ -993,11 +1019,6 @@ function setupSpecsComparator() {
         gsap.to("#bar-retract", { width: `${data.retractPercent}%`, duration: 0.6, ease: "power2.out" });
         gsap.to("#bar-torque", { width: `${data.torquePercent}%`, duration: 0.6, ease: "power2.out" });
         gsap.to("#bar-depth", { width: `${data.depthPercent}%`, duration: 0.6, ease: "power2.out" });
-
-        gsap.fromTo("#rig-drill-head", 
-          { y: 0, rotation: 0 }, 
-          { y: 15, rotation: 3, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }
-        );
       }
     });
   });
