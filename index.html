@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23030304%22 stroke=%22%23ff3c00%22 stroke-width=%225%22/><text x=%2250%22 y=%2258%22 font-family=%22sans-serif%22 font-weight=%22900%22 font-size=%2228%22 fill=%22white%22 text-anchor=%22middle%22>DTG</text><path d=%22M50 15 L50 85 M40 35 L60 35 M43 50 L57 50 M45 65 L55 65%22 stroke=%22%23ff3c00%22 stroke-width=%224%22 stroke-linecap=%22round%22/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DrillTech Geo | Geotechnical Drilling Company Saudi Arabia</title>
+    <meta name="description" content="DrillTech Geo delivers premium subsurface exploration, soil investigation, rock coring, and geotechnical drilling services across Saudi Arabia. Nationwide capabilities, desert to offshore." />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="preloader-number" id="preloader-num">00</div>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+      <span class="preloader-tagline" data-translate="preloader">DRILLTECH GEO SYSTEM RUNNING</span>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-follower" id="cursor-follower"></div>
+
+    <!-- Background morphing blur blobs -->
+    <div class="blob-container">
+      <div class="bg-blob bg-blob-1"></div>
+      <div class="bg-blob bg-blob-2"></div>
+    </div>
+
+    <!-- Background Cinematic overlays -->
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+    <canvas id="hero-particles-canvas" class="global-particles-bg"></canvas>
+
+    <div id="app">
+      <!-- Structural grid lines -->
+      <div class="section-border-line vertical border-left"></div>
+      <div class="section-border-line vertical border-right"></div>
+
+      <!-- Top Navigation -->
+      <header class="main-header">
+        <div class="header-container">
+          <div class="logo">
+            <img src="/assets/icon-white.png" alt="DTG Logo" width="36" height="36" style="object-fit: contain;">
+            <div class="logo-text">
+              <span class="brand-title" data-translate="brandTitle">DRILLTECH <span class="highlight">GEO</span></span>
+              <span class="brand-subtitle" data-translate="brandSubtitle">Saudi Arabia</span>
+            </div>
+          </div>
+          <nav class="nav-links">
+            <a href="#about" class="nav-link" data-translate="about">About</a>
+            <a href="#showcase" class="nav-link" data-translate="operations">Operations</a>
+            <a href="#services" class="nav-link" data-translate="services">Services</a>
+            <a href="#fleet" class="nav-link" data-translate="fleet">Fleet Specs</a>
+            <a href="#industries" class="nav-link" data-translate="industries">Industries</a>
+            <button id="lang-toggle" class="btn-secondary mini" style="padding: 0.5rem 1rem; border-color: var(--color-border); cursor: pointer;">AR</button>
+            <a href="/DrillTech_Geo_Brochure.pdf" download class="btn-secondary mini" style="padding: 0.5rem 1.25rem; font-size: 0.8rem; border-color: var(--color-border);" data-translate="brochure">Brochure</a>
+            <a href="#contact" class="btn-primary mini" data-translate="getQuote">Get Quote</a>
+          </nav>
+          <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Immersive Hero Section -->
+      <section class="hero-section">
+        <!-- Coordinate indicators in corners of the viewport -->
+        <div class="grid-marker top-left">[ 21.4858° N, 39.1925° E ]</div>
+        <div class="grid-marker top-right">JEDDAH_HQ</div>
+        
+        <div class="hero-content">
+          <div class="hero-tag" data-translate="heroTag">
+            <span class="pulse-dot"></span>
+            NATIONWIDE OPERATION • SAUDI ARABIA
+          </div>
+          <h1 class="hero-title">
+            <span data-translate="heroTitleLine1">PRECISION</span>
+            <span data-translate="heroTitleLine2">SUBSURFACE <span class="highlight">EXPLORATION</span></span>
+          </h1>
+          <p class="hero-description" data-translate="heroDesc">
+            Headquartered in Jeddah, DrillTech Geo is Saudi Arabia's premier geotechnical drilling operator. From sand dunes to offshore waves, we dig deep to secure structural integrity.
+          </p>
+          <div class="hero-buttons">
+            <a href="#showcase" class="btn-primary" data-translate="exploreBtn">Explore Operations</a>
+            <a href="#fleet" class="btn-secondary" data-translate="viewFleetBtn">View Rig Fleet</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cinematic Logo Marquee -->
+      <section class="logo-marquee-section">
+        <div class="marquee-wrapper">
+          <div class="marquee-title" data-translate="trustedPartners">TRUSTED INDUSTRIAL PARTNERS</div>
+          <div class="marquee-container">
+            <div class="marquee-track">
+              <div class="marquee-group">
+                <span class="partner-logo">▲ ARAMCO</span>
+                <span class="partner-logo">◆ NEOM</span>
+                <span class="partner-logo">▼ MA'ADEN</span>
+                <span class="partner-logo">● SABIC</span>
+                <span class="partner-logo">■ RED SEA GLOBAL</span>
+                <span class="partner-logo">◀ KAUST</span>
+              </div>
+              <div class="marquee-group" aria-hidden="true">
+                <span class="partner-logo">▲ ARAMCO</span>
+                <span class="partner-logo">◆ NEOM</span>
+                <span class="partner-logo">▼ MA'ADEN</span>
+                <span class="partner-logo">● SABIC</span>
+                <span class="partner-logo">■ RED SEA GLOBAL</span>
+                <span class="partner-logo">◀ KAUST</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="section-border-line horizontal border-top"></div>
+        <div class="grid-plus" style="top: 0; left: 4rem;">+</div>
+        <div class="grid-plus" style="top: 0; right: 4rem;">+</div>
+        
+        <div class="section-container">
+          <div class="about-grid">
+            <div class="about-text-content">
+              <h2 class="section-heading" data-translate="aboutHeading">SUBSURFACE POWER</h2>
+              <p class="paragraph-large" data-translate="aboutDesc">
+                DrillTech Geo executes complex geotechnical exploration under extreme conditions. Our experienced crew, paired with specialized machinery, delivers absolute geological data accuracy.
+              </p>
+              <div class="stats-container">
+                <div class="stat-box">
+                  <span class="stat-number" data-target="100">0%</span>
+                  <span class="stat-label" data-translate="statManaged">Saudi Managed</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number" data-target="1500">0 ft</span>
+                  <span class="stat-label" data-translate="statDepth">Max Depth (ft)</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number" data-target="14100">0 Nm</span>
+                  <span class="stat-label" data-translate="statTorque">Max Torque (Nm)</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="capability-box">
+              <h3 class="box-heading" data-translate="capHeading">CORE CAPABILITY ARCS</h3>
+              <div class="capability-list">
+                <div class="capability-item">
+                  <div class="cap-number">01</div>
+                  <div class="cap-details">
+                    <h4 data-translate="cap1Title">Extreme Desert Terrains</h4>
+                    <p data-translate="cap1Desc">High-torque traction systems designed to navigate shifting desert sands and remote sites.</p>
+                  </div>
+                </div>
+                <div class="capability-item">
+                  <div class="cap-number">02</div>
+                  <div class="cap-details">
+                    <h4 data-translate="cap2Title">Complex Industrial Zones</h4>
+                    <p data-translate="cap2Desc">Compact setups (CME 45B) operating with strict emissions compliance in active refineries.</p>
+                  </div>
+                </div>
+                <div class="capability-item">
+                  <div class="cap-number">03</div>
+                  <div class="cap-details">
+                    <h4 data-translate="cap3Title">Offshore & Coastal Sites</h4>
+                    <p data-translate="cap3Desc">Specialized marine platforms engineered for tidal stability and offshore rock coring.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Operations Showcase Section (Premium visual splits) -->
+      <section id="showcase" class="showcase-section">
+        <div class="section-border-line horizontal border-top"></div>
+        <div class="grid-plus" style="top: 0; left: 4rem;">+</div>
+        <div class="grid-plus" style="top: 0; right: 4rem;">+</div>
+
+        <div class="section-container">
+          <div class="text-center">
+            <h2 class="section-heading" data-translate="opsHeading">FIELD OPERATIONS</h2>
+            <p class="section-subheading" data-translate="opsSubheading" style="margin: 0 auto 5rem;">Visual showcase of DrillTech Geo geotechnical assets operating nationwide under extreme desert, coastal, and urban settings.</p>
+          </div>
+
+          <div class="showcase-stack" style="display: flex; flex-direction: column; gap: 8rem;">
+            <!-- Split 1: Desert Drilling -->
+            <div class="showcase-grid">
+              <div class="showcase-visual reveal-left">
+                <img src="/assets/desert-rig.png" alt="Desert Drilling Rig">
+              </div>
+              <div class="showcase-content">
+                <h3 class="highlight" data-translate="op1Title">01 / Desert Mobilization</h3>
+                <p data-translate="op1Desc">Operating custom crawler-mounted rigs (Mobile Drill B57) deep within the golden deserts of Saudi Arabia, surveying structural feasibility for industrial corridors and mining claims.</p>
+              </div>
+            </div>
+
+            <!-- Split 2: Coastal Marine Exploration -->
+            <div class="showcase-grid" style="direction: rtl;">
+              <div class="showcase-visual reveal-right" style="direction: ltr;">
+                <img src="/assets/offshore-rig.png" alt="Offshore Drilling Platform">
+              </div>
+              <div class="showcase-content" style="direction: ltr;">
+                <h3 class="highlight" data-translate="op2Title">02 / Offshore & Coastal Exploration</h3>
+                <p data-translate="op2Desc">Mobilizing coastal marine drilling platforms in Saudi harbor zones. Our specialized equipment performs subsea core extraction and standard penetration testing for major ports, docks, and bridges.</p>
+              </div>
+            </div>
+
+            <!-- Split 3: Soil Core Sample Lab Analysis -->
+            <div class="showcase-grid">
+              <div class="showcase-visual reveal-left">
+                <img src="/assets/soil-lab.png" alt="Soil Core Laboratory Analysis">
+              </div>
+              <div class="showcase-content">
+                <h3 class="highlight" data-translate="op3Title">03 / Core Classification Lab</h3>
+                <p data-translate="op3Desc">Pristine rock core samples and soil specimens are logged by geological technicians in our Jeddah labs. We deliver accurate geological classification logs under strict ASTM D-1586 standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section (Bento Grid) -->
+      <section id="services" class="bento-section">
+        <div class="section-border-line horizontal border-top"></div>
+        <div class="grid-plus" style="top: 0; left: 4rem;">+</div>
+        <div class="grid-plus" style="top: 0; right: 4rem;">+</div>
+
+        <div class="section-container">
+          <h2 class="section-heading" data-translate="servicesHeading">EXPLORATION SERVICES</h2>
+          <div class="bento-grid">
+            <!-- Bento Item 1 (Borehole Drilling) -->
+            <div class="bento-item wide">
+              <div class="bento-content">
+                <div class="bento-category">CORE SERVICE</div>
+                <h3 data-translate="s1Title">Borehole Drilling</h3>
+                <p data-translate="s1Desc">Creating precise boreholes for geotechnical investigations, mineral exploration, and deep foundation engineering. Standard configurations customized for high pressure sand layers.</p>
+              </div>
+              <div class="bento-visual">
+                <svg viewBox="0 0 100 100" class="bento-svg">
+                  <line x1="50" y1="10" x2="50" y2="90" stroke="#ff3c00" stroke-width="4" stroke-dasharray="4 2"/>
+                  <rect x="35" y="30" width="30" height="40" fill="none" stroke="white" stroke-width="2"/>
+                  <circle cx="50" cy="50" r="10" stroke="#ff3c00" stroke-width="2" fill="#0b0c10"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bento Item 2 (Rock Coring) -->
+            <div class="bento-item">
+              <div class="bento-content">
+                <div class="bento-category">ANALYSIS</div>
+                <h3 data-translate="s2Title">Rock Coring</h3>
+                <p data-translate="s2Desc">Extracting pristine rock core samples using advanced wireline core barrels for structural mapping.</p>
+              </div>
+              <div class="bento-visual">
+                <svg viewBox="0 0 100 100" class="bento-svg">
+                  <circle cx="50" cy="50" r="30" stroke="white" stroke-width="2" fill="none"/>
+                  <path d="M30 50 C 40 40, 60 60, 70 50" stroke="#ff3c00" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bento Item 3 (Soil Investigation) -->
+            <div class="bento-item">
+              <div class="bento-content">
+                <div class="bento-category">TESTING</div>
+                <h3 data-translate="s3Title">Soil Analysis</h3>
+                <p data-translate="s3Desc">Subsurface soil classification and testing to measure bearing capacity and compaction density.</p>
+              </div>
+              <div class="bento-visual">
+                <svg viewBox="0 0 100 100" class="bento-svg">
+                  <rect x="25" y="25" width="50" height="50" stroke="white" stroke-width="2" fill="none"/>
+                  <line x1="25" y1="50" x2="75" y2="50" stroke="#ff3c00" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bento Item 4 (Geophysical Survey) -->
+            <div class="bento-item">
+              <div class="bento-content">
+                <div class="bento-category">SEISMIC</div>
+                <h3 data-translate="s4Title">Geophysical Survey</h3>
+                <p data-translate="s4Desc">Advanced subsurface scanning using electrical resistivity and seismic refraction methods.</p>
+              </div>
+              <div class="bento-visual">
+                <svg viewBox="0 0 100 100" class="bento-svg">
+                  <path d="M10 50 Q 25 20, 40 50 T 70 50 T 90 50" stroke="white" stroke-width="2" fill="none"/>
+                  <line x1="10" y1="50" x2="90" y2="50" stroke="#ff3c00" stroke-width="1"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bento Item 6 (SPT & Sampling) -->
+            <div class="bento-item">
+              <div class="bento-content">
+                <div class="bento-category">ASTM D-1586</div>
+                <h3 data-translate="s6Title">SPT & Sampling</h3>
+                <p data-translate="s6Desc">Standard Penetration Tests using automatic hammers to verify geotechnical strength profiles.</p>
+              </div>
+              <div class="bento-visual">
+                <svg viewBox="0 0 100 100" class="bento-svg">
+                  <path d="M50 10 L50 90 M30 80 L70 80" stroke="white" stroke-width="2"/>
+                  <circle cx="50" cy="30" r="8" fill="#ff3c00"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bento Item 5 (Offshore Drilling) -->
+            <div class="bento-item full">
+              <div class="bento-content">
+                <div class="bento-category">MARINE</div>
+                <h3 data-translate="s5Title">Offshore Drilling</h3>
+                <p data-translate="s5Desc">Marine drilling operations in coastal zones and deepwater berths across Saudi harbors. Equipped with tidal stabilizers and custom offshore drilling barges.</p>
+              </div>
+              <div class="bento-visual">
+                <svg viewBox="0 0 100 100" class="bento-svg">
+                  <path d="M10 80 Q 30 75, 50 80 T 90 80" stroke="white" stroke-width="2" fill="none"/>
+                  <rect x="35" y="20" width="30" height="40" fill="none" stroke="#ff3c00" stroke-width="2"/>
+                  <line x1="50" y1="60" x2="50" y2="85" stroke="white" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fleet Comparator Section -->
+      <section id="fleet" class="fleet-section">
+        <div class="section-border-line horizontal border-top"></div>
+        <div class="grid-plus" style="top: 0; left: 4rem;">+</div>
+        <div class="grid-plus" style="top: 0; right: 4rem;">+</div>
+
+        <div class="section-container">
+          <h2 class="section-heading" data-translate="fleetHeading">MACHINERY COMPARATOR</h2>
+          <p class="section-subheading" data-translate="fleetSubheading">Compare hydraulic outputs, engine ratings, and capacities across our drilling fleet.</p>
+          
+          <div class="comparator-box">
+            <!-- Tabs Navigation -->
+            <div class="tabs-nav" role="tablist">
+              <button class="tab-btn active" role="tab" data-rig="b57">Mobile Drill B57</button>
+              <button class="tab-btn" role="tab" data-rig="cme45">CME 45B</button>
+              <button class="tab-btn" role="tab" data-rig="b53">Mobile Drill B53</button>
+              <button class="tab-btn" role="tab" data-rig="joy12">JOY12B</button>
+              <button class="tab-btn" role="tab" data-rig="cme75">CME 75</button>
+            </div>
+
+            <!-- Specs Sheet Display Area -->
+            <div class="specs-grid-layout">
+              <div class="visual-column">
+                <div class="rig-technical-card">
+                  <!-- SVG representation of a Rig structure -->
+                  <svg class="rig-vector-svg" viewBox="0 0 200 250">
+                    <line x1="100" y1="20" x2="100" y2="230" stroke="#141622" stroke-width="6"/>
+                    <line x1="100" y1="20" x2="100" y2="230" id="rig-drill-line" stroke="#ff3c00" stroke-width="2"/>
+                    <rect x="80" y="80" width="40" height="50" fill="#0b0c10" stroke="#ff3c00" stroke-width="2" rx="4" id="rig-drill-head"/>
+                    <line x1="40" y1="230" x2="160" y2="230" stroke="#141622" stroke-width="12"/>
+                    <circle cx="60" cy="235" r="10" fill="#030305"/>
+                    <circle cx="140" cy="235" r="10" fill="#030305"/>
+                    <path d="M100 20 L80 50 L120 50 Z" fill="#ff3c00"/>
+                  </svg>
+                  <h3 id="rig-display-name">Mobile Drill B57</h3>
+                  <span id="rig-notable-feature" class="card-rig-badge">SPT Automatic Hammer</span>
+                </div>
+              </div>
+              
+              <div class="specs-column">
+                <h3 data-translate="specHeader">HYDRAULIC & OPERATING TELEMETRY</h3>
+                
+                <div class="gauge-block">
+                  <div class="gauge-header">
+                    <span data-translate="specPulldown">Pulldown Force</span>
+                    <span id="spec-pulldown-val" class="gauge-val">20,000 lbs</span>
+                  </div>
+                  <div class="gauge-track">
+                    <div id="bar-pulldown" class="gauge-fill" style="width: 63%;"></div>
+                  </div>
+                </div>
+
+                <div class="gauge-block">
+                  <div class="gauge-header">
+                    <span data-translate="specRetract">Retract Force</span>
+                    <span id="spec-retract-val" class="gauge-val">30,000 lbs</span>
+                  </div>
+                  <div class="gauge-track">
+                    <div id="bar-retract" class="gauge-fill" style="width: 75%;"></div>
+                  </div>
+                </div>
+
+                <div class="gauge-block">
+                  <div class="gauge-header">
+                    <span data-translate="specTorque">Max Spindle Torque</span>
+                    <span id="spec-torque-val" class="gauge-val">6,587 Nm</span>
+                  </div>
+                  <div class="gauge-track">
+                    <div id="bar-torque" class="gauge-fill" style="width: 46%;"></div>
+                  </div>
+                </div>
+
+                <div class="gauge-block">
+                  <div class="gauge-header">
+                    <span data-translate="specDepth">Max Drilling Depth</span>
+                    <span id="spec-depth-val" class="gauge-val">1,500 ft</span>
+                  </div>
+                  <div class="gauge-track">
+                    <div id="bar-depth" class="gauge-fill" style="width: 90%;"></div>
+                  </div>
+                </div>
+
+                <!-- Text Grid specifications -->
+                <div class="spec-grid-info">
+                  <div class="info-item">
+                    <span class="info-item item-lbl" data-translate="specEngine">Engine Model</span>
+                    <span id="spec-engine" class="info-item item-val">Deutz Tier 3 Diesel, 116 hp</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-item item-lbl" data-translate="specAuger">Auger Capacity</span>
+                    <span id="spec-auger" class="info-item item-val">4-1/4 in ID hollow: 250 ft</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-item item-lbl" data-translate="specType">Rig Type</span>
+                    <span id="spec-type" class="info-item item-val">Rotary and DTH Capable</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries We Serve & Why Choose Us -->
+      <section id="industries" class="industries-section">
+        <div class="section-border-line horizontal border-top"></div>
+        <div class="grid-plus" style="top: 0; left: 4rem;">+</div>
+        <div class="grid-plus" style="top: 0; right: 4rem;">+</div>
+
+        <div class="section-container">
+          <h2 class="section-heading text-center" data-translate="indHeading">INDUSTRIES WE SERVE</h2>
+          
+          <div class="industries-slider-container">
+            <div class="industry-card-item">
+              <div class="industry-num">01</div>
+              <h4 data-translate="ind1Title">Construction</h4>
+              <p data-translate="ind1Desc">Soil bearing calculations and deep foundation drill logs for modern commercial skyscrapers.</p>
+            </div>
+            <div class="industry-card-item">
+              <div class="industry-num">02</div>
+              <h4 data-translate="ind2Title">Infrastructure</h4>
+              <p data-translate="ind2Desc">Bridges, rail lines, highway flyovers, and public utility corridor profiling.</p>
+            </div>
+            <div class="industry-card-item">
+              <div class="industry-num">03</div>
+              <h4 data-translate="ind3Title">Government Projects</h4>
+              <p data-translate="ind3Desc">Strategic geotechnical surveys for municipal and national agency developments.</p>
+            </div>
+            <div class="industry-card-item">
+              <div class="industry-num">04</div>
+              <h4 data-translate="ind4Title">Mining Operations</h4>
+              <p data-translate="ind4Desc">Core drilling for Gold, Steel, and Cement mines across the Western Shield.</p>
+            </div>
+            <div class="industry-card-item">
+              <div class="industry-num">05</div>
+              <h4 data-translate="ind5Title">Offshore & Coastal</h4>
+              <p data-translate="ind5Desc">Marine boring and subsea soil profiling for ports, docks, and coastal projects.</p>
+            </div>
+          </div>
+
+          <div class="divider-line"></div>
+
+          <h2 class="section-heading text-center" data-translate="whyHeading">WHY DRILLTECH GEO</h2>
+          <div class="why-box-grid">
+            <div class="why-cell">
+              <h5 data-translate="w1Title">Expert Local Crew</h5>
+              <p data-translate="w1Desc">Years of specialized field operations navigating diverse regional soils.</p>
+            </div>
+            <div class="why-cell">
+              <h5 data-translate="w2Title">Lab-Verified Testing</h5>
+              <p data-translate="w2Desc">Soil and rock specimens tested under rigorous ASTM standards.</p>
+            </div>
+            <div class="why-cell">
+              <h5 data-translate="w3Title">Custom Drilling Plans</h5>
+              <p data-translate="w3Desc">Engineering tailored drilling parameters based on initial seismic data.</p>
+            </div>
+            <div class="why-cell">
+              <h5 data-translate="w4Title">Strict Safety Standard</h5>
+              <p data-translate="w4Desc">Operations compliant with local environmental laws and safety guidelines.</p>
+            </div>
+            <div class="why-cell">
+              <h5 data-translate="w5Title">Rapid Mobilization</h5>
+              <p data-translate="w5Desc">Jeddah logistics base ensures prompt transport nationwide.</p>
+            </div>
+            <div class="why-cell">
+              <h5 data-translate="w6Title">Offshore Versatility</h5>
+              <p data-translate="w6Desc">High adaptability between land rigs and marine drilling setups.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact / Mobilization Form Section -->
+      <section id="contact" class="contact-section">
+        <div class="section-border-line horizontal border-top"></div>
+        <div class="grid-plus" style="top: 0; left: 4rem;">+</div>
+        <div class="grid-plus" style="top: 0; right: 4rem;">+</div>
+
+        <div class="section-container">
+          <div class="contact-layout-split">
+            <div class="contact-text-box">
+              <h2 class="section-heading" data-translate="contactHeading">MOBILIZE TODAY</h2>
+              <p class="paragraph-large" data-translate="contactDesc">Initiate your geotechnical project. Get in touch with our Jeddah engineering desk.</p>
+              
+              <div class="contact-items-stack">
+                <div class="contact-row-entry">
+                  <div class="lbl" data-translate="cPhone">PHONE</div>
+                  <a href="tel:+966554229904" class="lnk-val">+966 55 422 9904</a>
+                </div>
+                <div class="contact-row-entry">
+                  <div class="lbl" data-translate="cEmail">EMAIL</div>
+                  <a href="mailto:Nazir.drilltechgeo@gmail.com" class="lnk-val">Nazir.drilltechgeo@gmail.com</a>
+                </div>
+                <div class="contact-row-entry">
+                  <div class="lbl" data-translate="cHq">HEADQUARTERS</div>
+                  <span class="lnk-val" style="cursor: default;" data-translate="cHqVal">Jeddah, Saudi Arabia</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <form id="contact-form" class="quote-form-grid">
+                <div class="inputs-row">
+                  <div class="input-container">
+                    <label for="name" data-translate="formName">Your Name</label>
+                    <input type="text" id="name" required placeholder="Dr. Nazir">
+                  </div>
+                  <div class="input-container">
+                    <label for="company" data-translate="formCompany">Company Name</label>
+                    <input type="text" id="company" required placeholder="Construction Corp">
+                  </div>
+                </div>
+                <div class="input-container">
+                  <label for="email" data-translate="formEmail">Email Address</label>
+                  <input type="email" id="email" required placeholder="nazir.drilltechgeo@gmail.com">
+                </div>
+                <div class="input-container">
+                  <label for="project-type" data-translate="formEnv">Project Environment</label>
+                  <select id="project-type" required>
+                    <option value="" disabled selected>Select terrain...</option>
+                    <option value="desert">Desert Terrain</option>
+                    <option value="industrial">Complex Industrial Zone</option>
+                    <option value="offshore">Offshore / Coastal</option>
+                    <option value="infrastructure">Infrastructure Route</option>
+                  </select>
+                </div>
+                <div class="input-container">
+                  <label for="details" data-translate="formDetails">Project Requirements</label>
+                  <textarea id="details" rows="4" placeholder="Detail depth targets, SPT testing required, or machine preferences..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="justify-content: center;" data-translate="formSubmit">SUBMIT MOBILIZATION REQUEST</button>
+              </form>
+              <div id="form-success-msg" class="form-success-wrapper hidden">
+                <h4 data-translate="formSuccessTitle">REQUEST SUBMITTED SUCCESSFULLY</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="premium-footer">
+        <div class="section-container">
+          <div class="footer-content">
+            <span>© 2026 DrillTech Geo (DTG). All rights reserved. Jeddah, Saudi Arabia.</span>
+            <span class="footer-logo-tag">VITE + GSAP + WEB AUDIO + CANVAS</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/966554229904" target="_blank" class="whatsapp-badge" aria-label="Contact on WhatsApp">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97-1.861-1.868-4.339-2.897-6.97-2.898-5.442 0-9.87 4.372-9.874 9.802-.001 1.737.498 3.435 1.448 5.01l-.993 3.624 3.72-.975zm11.367-6.326c-.302-.15-1.791-.883-2.068-.983-.277-.1-.478-.15-.679.15-.202.302-.78.983-.956 1.183-.176.2-.352.226-.654.076-.301-.15-1.273-.47-2.425-1.493-.896-.8-1.5-1.787-1.676-2.088-.176-.3-.019-.462.13-.611.135-.134.302-.352.453-.528.151-.176.201-.302.302-.503.101-.2.05-.377-.025-.528-.075-.15-.679-1.635-.93-2.238-.244-.589-.493-.509-.679-.519-.176-.01-.377-.01-.578-.01-.201 0-.528.075-.804.377-.276.302-1.056 1.03-1.056 2.512 0 1.482 1.08 2.917 1.231 3.118.151.2 2.126 3.247 5.15 4.553.719.31 1.28.495 1.718.633.722.23 1.379.197 1.899.12.58-.087 1.791-.73 2.043-1.434.252-.703.252-1.306.176-1.433-.075-.127-.276-.201-.578-.352z"/>
+      </svg>
+    </a>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
