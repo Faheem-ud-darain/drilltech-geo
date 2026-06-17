@@ -378,28 +378,51 @@ function applyTranslations() {
 
 // Preloader loader
 function setupPreloader() {
-  const numEl = document.getElementById("preloader-num");
-  const barEl = document.getElementById("preloader-bar");
-  const loaderEl = document.getElementById("preloader");
-  
+  const numEl      = document.getElementById("preloader-num");
+  const barFillEl  = document.getElementById("preloader-bar-fill");
+  const ringEl     = document.getElementById("preloader-ring-fill");
+  const statusEl   = document.getElementById("preloader-status");
+  const loaderEl   = document.getElementById("preloader");
+
   if (!loaderEl) return;
-  
+
+  const CIRCUMFERENCE = 339.3;
+  const statusMessages = [
+    "INITIALIZING SYSTEMS...",
+    "LOADING GEOTECHNICAL DATA...",
+    "CALIBRATING DRILL PARAMETERS...",
+    "ENGAGING SUBSURFACE MODULES...",
+    "DRILLTECH GEO READY."
+  ];
+
+  let msgIndex = 0;
+  const msgInterval = setInterval(() => {
+    msgIndex = Math.min(msgIndex + 1, statusMessages.length - 1);
+    if (statusEl) statusEl.textContent = statusMessages[msgIndex];
+  }, 700);
+
   const obj = { val: 0 };
   gsap.to(obj, {
     val: 100,
-    duration: 1.2,
-    ease: "power2.out",
+    duration: 3.2,
+    ease: "power1.inOut",
     onUpdate: () => {
-      const rounded = Math.floor(obj.val);
-      if (numEl) numEl.textContent = rounded < 10 ? `0${rounded}` : rounded;
-      if (barEl) barEl.style.width = `${rounded}%`;
+      const v = Math.floor(obj.val);
+      if (numEl) numEl.textContent = v + "%";
+      if (barFillEl) barFillEl.style.width = v + '%';
+      // SVG ring fill
+      if (ringEl) {
+        const offset = CIRCUMFERENCE - (v / 100) * CIRCUMFERENCE;
+        ringEl.style.strokeDashoffset = offset;
+        ringEl.style.transition = 'stroke-dashoffset 0.05s linear';
+      }
     },
     onComplete: () => {
+      clearInterval(msgInterval);
       gsap.to(loaderEl, {
         opacity: 0,
-        y: -100,
-        duration: 0.5,
-        ease: "power3.inOut",
+        duration: 0.3,
+        ease: "power2.inOut",
         onComplete: () => {
           loaderEl.style.display = "none";
           triggerHeroAnimations();

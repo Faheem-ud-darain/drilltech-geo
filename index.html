@@ -10,11 +10,26 @@
   <body>
     <!-- Preloader -->
     <div id="preloader">
-      <div class="preloader-number" id="preloader-num">00</div>
-      <div class="preloader-bar-container">
-        <div class="preloader-bar" id="preloader-bar"></div>
+      <div class="preloader-inner">
+        <!-- Spinning logo drill -->
+        <div class="preloader-logo-wrap">
+          <svg class="preloader-ring" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="54" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+            <circle cx="60" cy="60" r="54" fill="none" stroke="#ff3c00" stroke-width="3"
+              stroke-dasharray="339.3" stroke-dashoffset="339.3"
+              stroke-linecap="round" id="preloader-ring-fill"/>
+          </svg>
+          <img src="/assets/icon-white.png" class="preloader-logo-img" alt="DTG"/>
+        </div>
+
+        <div class="preloader-brand">DRILLTECH <span style="color:var(--color-accent)">GEO</span></div>
+        <div class="preloader-status" id="preloader-status">INITIALIZING SYSTEMS...</div>
+
+        <div class="preloader-bar-container">
+          <div class="preloader-bar" id="preloader-bar"><div class="preloader-bar-fill" id="preloader-bar-fill"></div></div>
+          <span class="preloader-number" id="preloader-num">0%</span>
+        </div>
       </div>
-      <span class="preloader-tagline" data-translate="preloader">DRILLTECH GEO SYSTEM RUNNING</span>
     </div>
 
     <!-- Custom Cursor -->
@@ -44,7 +59,6 @@
             <img src="/assets/icon-white.png" alt="DTG Logo" width="36" height="36" style="object-fit: contain;">
             <div class="logo-text">
               <span class="brand-title" data-translate="brandTitle">DRILLTECH <span class="highlight">GEO</span></span>
-              <span class="brand-subtitle" data-translate="brandSubtitle">Saudi Arabia</span>
             </div>
           </div>
           <nav class="nav-links">
@@ -77,8 +91,9 @@
             NATIONWIDE OPERATION • SAUDI ARABIA
           </div>
           <h1 class="hero-title">
-            <span data-translate="heroTitleLine1">PRECISION</span>
-            <span data-translate="heroTitleLine2">SUBSURFACE <span class="highlight">EXPLORATION</span></span>
+            <span>DRILLING</span>
+            <span>WITH</span>
+            <span class="highlight">PRECISION</span>
           </h1>
           <p class="hero-description" data-translate="heroDesc">
             Headquartered in Jeddah, DrillTech Geo is Saudi Arabia's premier geotechnical drilling operator. From sand dunes to offshore waves, we dig deep to secure structural integrity.
@@ -561,9 +576,6 @@
                 </div>
                 <button type="submit" class="btn-primary" style="justify-content: center;" data-translate="formSubmit">SUBMIT MOBILIZATION REQUEST</button>
               </form>
-              <div id="form-success-msg" class="form-success-wrapper hidden">
-                <h4 data-translate="formSuccessTitle">REQUEST SUBMITTED SUCCESSFULLY</h4>
-              </div>
             </div>
           </div>
         </div>
