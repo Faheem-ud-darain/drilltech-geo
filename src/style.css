@@ -674,7 +674,7 @@ html[dir="rtl"] .dropdown-menu-item svg {
   align-items: center;
   justify-content: space-around;
   min-width: 100%;
-  gap: 6rem;
+  gap: 3.5rem;
   padding: 0 2rem;
 }
 
@@ -1336,26 +1336,9 @@ section {
 
 /* Why Section — Heading orange highlight */
 .why-brand-highlight {
-  color: var(--color-accent);
+  color: #fff;
   position: relative;
   display: inline-block;
-}
-
-/* Animated underline pulse on highlight */
-.why-brand-highlight::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-  animation: whyUnderlinePulse 2.5s ease-in-out infinite;
-}
-
-@keyframes whyUnderlinePulse {
-  0%, 100% { opacity: 0.4; transform: scaleX(0.6); }
-  50%       { opacity: 1;   transform: scaleX(1); }
 }
 
 /* Why Cells */
@@ -1513,7 +1496,7 @@ section {
 /* Footer */
 .premium-footer {
   background-color: var(--color-bg);
-  padding: 5rem 4rem;
+  padding: 2.5rem 4rem;
   border-top: 1px solid var(--color-border);
   font-size: 0.85rem;
   color: var(--color-text-dim);
@@ -1760,7 +1743,7 @@ section {
   .border-right { right: 2rem; }
 
   .premium-footer {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
   }
 
   .stats-container {
