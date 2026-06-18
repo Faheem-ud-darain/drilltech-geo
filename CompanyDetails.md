@@ -25,7 +25,7 @@ Circular emblem with "DTG" lettering and a stylized drill bit running vertically
 | Channel | Detail |
 |---|---|
 | **Phone** | +966 55 422 9904 |
-| **Email** | Nazir.drilltechgeo@gmail.com |
+| **Email** | drilltech.geo@gmail.com |
 | **Location** | Jeddah, Saudi Arabia |
 
 ---

@@ -370,7 +370,7 @@ function applyTranslations() {
   
   if (nameInput) nameInput.placeholder = currentLang === 'ar' ? "الاسم" : "Dr. Nazir";
   if (compInput) compInput.placeholder = currentLang === 'ar' ? "اسم الشركة" : "Construction Corp";
-  if (emailInput) emailInput.placeholder = currentLang === 'ar' ? "البريد الإلكتروني" : "drilltechgeo@gmail.com";
+  if (emailInput) emailInput.placeholder = currentLang === 'ar' ? "البريد الإلكتروني" : "drilltech.geo@gmail.com";
   if (detailsInput) detailsInput.placeholder = currentLang === 'ar' ? "اكتب متطلبات مشروعك..." : "Detail depth targets, SPT testing...";
   
   if (projSelect) {
