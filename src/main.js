@@ -2,7 +2,6 @@ import './style.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as THREE from 'three';
-import { initForm } from '@formspree/ajax';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -1057,10 +1056,44 @@ function setupSpecsComparator() {
 
 function setupContactForm() {
   const form = document.getElementById("contact-form");
-  if (form) {
-    initForm({
-      formElement: '#contact-form',
-      formId: 'mdavrwpw'
+  const successModal = document.querySelector("[data-fs-success]");
+  
+  if (form && successModal) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector("[data-fs-submit-btn]");
+      const originalText = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = currentLang === 'ar' ? "جاري الإرسال..." : "SUBMITTING...";
+      }
+
+      try {
+        const response = await fetch("https://formspree.io/f/mdavrwpw", {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          // Show the success modal
+          successModal.style.display = "block";
+          form.reset();
+        } else {
+          const data = await response.json();
+          alert(data.error || (currentLang === 'ar' ? "فشل إرسال النموذج" : "Form submission failed"));
+        }
+      } catch (error) {
+        alert(currentLang === 'ar' ? "حدث خطأ أثناء الاتصال بالخادم" : "Error connecting to the server");
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText || (currentLang === 'ar' ? "إرسال طلب التعبئة والتجهيز" : "SUBMIT MOBILIZATION REQUEST");
+        }
+      }
     });
   }
 }
