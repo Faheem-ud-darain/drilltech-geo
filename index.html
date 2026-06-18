@@ -612,11 +612,20 @@
                 </div>
               </div>
             </div>
-
             <div class="form-card">
-              <div id="form-success-msg" data-fs-success class="form-success-wrapper" style="display:none; text-align:center; padding: 2rem 0;">
-                <h4 data-translate="formSuccessTitle">REQUEST SUBMITTED SUCCESSFULLY</h4>
-                <p style="color:var(--color-text-muted); margin-top:1rem;">Our Jeddah engineering desk will contact you shortly.</p>
+              <!-- Success Modal Popup -->
+              <div data-fs-success style="display:none;">
+                <div class="form-success-modal">
+                  <div class="success-modal-backdrop"></div>
+                  <div class="success-modal-content">
+                    <div class="success-modal-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h4 data-translate="formSuccessTitle">REQUEST SUBMITTED SUCCESSFULLY</h4>
+                    <p data-translate="formSuccessDesc">Our Jeddah engineering desk will contact you shortly.</p>
+                    <button type="button" class="btn-primary success-modal-close" style="justify-content: center;" onclick="this.closest('[data-fs-success]').style.display='none'">CLOSE</button>
+                  </div>
+                </div>
               </div>
 
               <form id="contact-form" class="quote-form-grid">

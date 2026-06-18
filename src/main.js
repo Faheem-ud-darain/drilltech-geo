@@ -109,7 +109,8 @@ const TRANSLATIONS = {
     formInfra: "Infrastructure Route",
     formDetails: "Project Requirements",
     formSubmit: "SUBMIT MOBILIZATION REQUEST",
-    formSuccessTitle: "REQUEST SUBMITTED SUCCESSFULLY"
+    formSuccessTitle: "REQUEST SUBMITTED SUCCESSFULLY",
+    formSuccessDesc: "Our Jeddah engineering desk will contact you shortly."
   },
   ar: {
     about: "من نحن",
@@ -212,7 +213,8 @@ const TRANSLATIONS = {
     formInfra: "مسار بنية تحتية",
     formDetails: "متطلبات المشروع تفصيلاً",
     formSubmit: "إرسال طلب التعبئة والتجهيز",
-    formSuccessTitle: "تم إرسال الطلب بنجاح"
+    formSuccessTitle: "تم إرسال الطلب بنجاح",
+    formSuccessDesc: "سيتصل بك مكتبنا الهندسي بجدة في أقرب وقت ممكن."
   }
 };
 
