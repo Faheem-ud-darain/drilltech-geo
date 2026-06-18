@@ -2,6 +2,7 @@ import './style.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as THREE from 'three';
+import { initForm } from '@formspree/ajax';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -1054,24 +1055,10 @@ function setupSpecsComparator() {
 
 function setupContactForm() {
   const form = document.getElementById("contact-form");
-  const successMsg = document.getElementById("form-success-msg");
-  
-  if (form && successMsg) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      gsap.to(form, {
-        opacity: 0,
-        y: -15,
-        duration: 0.4,
-        onComplete: () => {
-          form.classList.add("hidden");
-          successMsg.classList.remove("hidden");
-          gsap.fromTo(successMsg, 
-            { opacity: 0, y: 15 },
-            { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
-          );
-        }
-      });
+  if (form) {
+    initForm({
+      formElement: '#contact-form',
+      formId: 'mdavrwpw'
     });
   }
 }
