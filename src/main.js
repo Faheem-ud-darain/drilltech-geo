@@ -773,7 +773,7 @@ function setupHeroBackground() {
           const subI = i - 4500;
           if (subI >= 500 && subI < 1100) {
             // Rotating spiral drill bit screw
-            const angleOffset = elapsedTime * 9.0;
+            const angleOffset = -elapsedTime * 9.0;
             array[i3 + 0] = startX * Math.cos(angleOffset) - startZ * Math.sin(angleOffset);
             array[i3 + 2] = startX * Math.sin(angleOffset) + startZ * Math.cos(angleOffset);
           } else if (subI >= 1100) {
