@@ -1829,6 +1829,14 @@ section {
     gap: 3.5rem;
   }
 
+  .showcase-grid {
+    direction: ltr !important;
+  }
+
+  .showcase-grid * {
+    direction: ltr !important;
+  }
+
   .showcase-visual {
     height: 380px;
   }
@@ -1859,6 +1867,10 @@ section {
     text-align: center;
     padding: 2.5rem;
   }
+
+  .industry-card-item:hover, .industry-card-item.industry-active {
+    transform: none !important;
+  }
   
   .why-box-grid {
     grid-template-columns: 1fr;
@@ -1887,6 +1899,16 @@ section {
   }
   .contact-info-item .val {
     word-break: break-word;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .spec-grid-info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
@@ -1937,11 +1959,35 @@ section {
     font-size: clamp(1.2rem, 5.5vw, 1.8rem);
     word-break: break-word;
   }
+
+  .grid-marker {
+    display: none !important;
+  }
+
+  .rig-image-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .whatsapp-badge {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
+  }
+  .whatsapp-icon {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 3.25rem;
+    font-size: clamp(2.2rem, 9vw, 3.5rem);
   }
 
   .hero-buttons {
@@ -1967,5 +2013,9 @@ section {
 
   .stat-number {
     font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .showcase-visual {
+    height: 260px;
   }
 }
