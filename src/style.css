@@ -252,10 +252,9 @@ body {
   width: 100%;
   height: 1px;
 }
+/* Vertical rails hidden — they span full page height and overlap content */
 .section-border-line.vertical {
-  top: 0;
-  width: 1px;
-  height: 100%;
+  display: none;
 }
 .border-top { top: 0; }
 .border-bottom { bottom: 0; }
@@ -441,7 +440,6 @@ body {
   align-items: center;
   position: relative;
   padding: 8rem 4rem;
-  overflow: hidden;
 }
 
 .global-particles-bg {
@@ -449,7 +447,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: -1;
   pointer-events: none;
   opacity: 0.95;
 }
@@ -578,7 +576,7 @@ body {
 section {
   position: relative;
   padding: 10rem 4rem;
-  z-index: 10;
+  z-index: 3;
 }
 
 .section-container {
@@ -1106,9 +1104,61 @@ section {
   grid-template-columns: 100px 1.5fr 1fr;
   align-items: center;
   gap: 4rem;
-  transition: var(--transition-premium);
+  transition: border-color 0.5s ease, background 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
   border-radius: 8px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* Sweep shimmer line on active */
+.industry-card-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 60, 0, 0.06) 50%,
+    transparent 100%
+  );
+  transition: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.industry-card-item.industry-active::before {
+  animation: industryShimmer 1.2s ease forwards;
+}
+
+@keyframes industryShimmer {
+  0%   { left: -100%; }
+  100% { left: 160%; }
+}
+
+.industry-card-item.industry-active {
+  border-color: var(--color-accent);
+  background: rgba(255, 60, 0, 0.06);
+  transform: translateX(10px);
+  box-shadow:
+    0 0 0 1px rgba(255, 60, 0, 0.4),
+    0 0 20px rgba(255, 60, 0, 0.25),
+    0 0 60px rgba(255, 60, 0, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.industry-card-item.industry-active .industry-num {
+  color: var(--color-accent);
+  text-shadow: 0 0 20px rgba(255, 60, 0, 0.6);
+}
+
+.industry-card-item.industry-active h4 {
+  color: #fff;
 }
 
 .industry-card-item:hover {
@@ -1139,6 +1189,35 @@ section {
   font-weight: 300;
 }
 
+/* Why Section — Heading orange highlight */
+.why-brand-highlight {
+  color: var(--color-accent);
+  text-shadow:
+    0 0 20px rgba(255, 60, 0, 0.6),
+    0 0 50px rgba(255, 60, 0, 0.3),
+    0 0 100px rgba(255, 60, 0, 0.12);
+  position: relative;
+  display: inline-block;
+}
+
+/* Animated underline pulse on highlight */
+.why-brand-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  animation: whyUnderlinePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes whyUnderlinePulse {
+  0%, 100% { opacity: 0.4; transform: scaleX(0.6); }
+  50%       { opacity: 1;   transform: scaleX(1); }
+}
+
+/* Why Cells — Moving border animation */
 .why-box-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1147,19 +1226,81 @@ section {
 }
 
 .why-cell {
-  background: rgba(6, 6, 8, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 5;
+  border-radius: 8px;
+  padding: 2px; /* space for the animated border */
+  background: transparent;
+  opacity: 1;
+}
+
+/* Rotating conic-gradient border */
+.why-cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0deg,
+    transparent 60deg,
+    rgba(255, 60, 0, 0.9) 90deg,
+    rgba(255, 140, 0, 0.6) 120deg,
+    transparent 150deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+  to { --angle: 360deg; }
+}
+
+/* Inner card surface */
+.why-cell::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  border-radius: 7px;
+  background: rgba(6, 6, 8, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  z-index: -1;
+}
+
+.why-cell-inner {
+  position: relative;
+  z-index: 2;
   padding: 3rem;
-  transition: var(--transition-premium);
-  border-radius: 8px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.why-cell:hover::before {
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0deg,
+    transparent 30deg,
+    rgba(255, 60, 0, 1) 60deg,
+    rgba(255, 140, 0, 0.9) 90deg,
+    rgba(255, 200, 0, 0.5) 120deg,
+    transparent 150deg,
+    transparent 360deg
+  );
+  animation: rotateBorder 1.5s linear infinite;
 }
 
 .why-cell:hover {
-  border-color: var(--color-border-glow);
-  background: var(--color-surface);
+  box-shadow:
+    0 0 25px rgba(255, 60, 0, 0.2),
+    0 0 60px rgba(255, 60, 0, 0.08);
 }
 
 .why-cell h5 {
@@ -1307,6 +1448,43 @@ section {
   font-weight: 800;
   color: var(--color-border-glow);
   letter-spacing: 0.1em;
+}
+
+/* Footer Social Links */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-dim);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: var(--transition-fast);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.footer-social-link:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(253, 29, 29, 0.3);
+  transform: translateY(-2px);
+}
+
+.footer-social-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 /* Floating WhatsApp Badge */

@@ -25,9 +25,9 @@ const TRANSLATIONS = {
     exploreBtn: "Explore Operations",
     viewFleetBtn: "View Rig Fleet",
     aboutHeading: "SUBSURFACE POWER",
-    aboutDesc: "DrillTech Geo executes complex geotechnical exploration under extreme conditions. Our experienced crew, paired with specialized machinery, delivers absolute geological data accuracy.",
+    aboutDesc: "DrillTech Geo is a specialist geotechnical drilling company headquartered in Jeddah, delivering subsurface exploration and soil analysis services for a wide range of industries across Saudi Arabia. With an experienced team and cutting-edge equipment, we offer clients the reliability, accuracy, and safety essential for major construction, infrastructure, and mining projects. We work in both desert terrains and complex industrial zones including offshore sites, with proven capability.",
     statManaged: "Saudi Managed",
-    statDepth: "Max Depth (ft)",
+    statDepth: "Max Depth (m)",
     statTorque: "Max Torque (Nm)",
     capHeading: "CORE CAPABILITY ARCS",
     cap1Title: "Extreme Desert Terrains",
@@ -68,29 +68,29 @@ const TRANSLATIONS = {
     specAuger: "Auger Capacity",
     specType: "Rig Type",
     indHeading: "INDUSTRIES WE SERVE",
-    ind1Title: "Construction",
-    ind1Desc: "Soil bearing calculations and deep foundation drill logs for modern commercial skyscrapers.",
-    ind2Title: "Infrastructure",
+    ind1Title: "Construction Companies",
+    ind1Desc: "Soil bearing calculations and deep foundation drill logs for commercial and residential construction projects.",
+    ind2Title: "Infrastructure Projects",
     ind2Desc: "Bridges, rail lines, highway flyovers, and public utility corridor profiling.",
     ind3Title: "Government Projects",
     ind3Desc: "Strategic geotechnical surveys for municipal and national agency developments.",
-    ind4Title: "Mining Operations",
-    ind4Desc: "Core drilling for Gold, Steel, and Cement mines across the Western Shield.",
-    ind5Title: "Offshore & Coastal",
-    ind5Desc: "Marine boring and subsea soil profiling for ports, docks, and coastal projects.",
-    whyHeading: "WHY DRILLTECH GEO",
-    w1Title: "Expert Local Crew",
-    w1Desc: "Years of specialized field operations navigating diverse regional soils.",
-    w2Title: "Lab-Verified Testing",
-    w2Desc: "Soil and rock specimens tested under rigorous ASTM standards.",
-    w3Title: "Custom Drilling Plans",
-    w3Desc: "Engineering tailored drilling parameters based on initial seismic data.",
-    w4Title: "Strict Safety Standard",
-    w4Desc: "Operations compliant with local environmental laws and safety guidelines.",
-    w5Title: "Rapid Mobilization",
-    w5Desc: "Jeddah logistics base ensures prompt transport nationwide.",
-    w6Title: "Offshore Versatility",
-    w6Desc: "High adaptability between land rigs and marine drilling setups.",
+    ind4Title: "Gold, Steel & Cement Mines",
+    ind4Desc: "Core drilling and subsurface investigation for Gold, Steel, and Cement mines across Saudi Arabia.",
+    ind5Title: "Offshore & Coastal Projects",
+    ind5Desc: "Marine boring and subsea soil profiling for offshore platforms, ports, docks, and coastal infrastructure.",
+    whyHeading: "WHY <span class='why-brand-highlight'>DRILLTECH GEO</span>",
+    w1Title: "Expert Field Team",
+    w1Desc: "Expert field team with years of local experience navigating diverse terrains across Saudi Arabia.",
+    w2Title: "Harsh Terrain Capability",
+    w2Desc: "Capability to operate in harsh, remote, and offshore conditions with proven track record.",
+    w3Title: "Accurate Testing & Reporting",
+    w3Desc: "Accurate testing and reporting using modern tools and lab-verified samples under strict ASTM standards.",
+    w4Title: "Safety Compliant Operations",
+    w4Desc: "Operations meet local safety regulations and international best practices at every site.",
+    w5Title: "Custom Drilling Plans",
+    w5Desc: "Custom drilling plans for construction sites, mines, and offshore locations tailored to each project.",
+    w6Title: "Quick Mobilization",
+    w6Desc: "Quick mobilization, clean project handling, and on-time delivery from our Jeddah base.",
     contactHeading: "MOBILIZE TODAY",
     contactDesc: "Initiate your geotechnical project. Get in touch with our Jeddah engineering desk.",
     cPhone: "PHONE",
@@ -181,7 +181,7 @@ const TRANSLATIONS = {
     ind4Desc: "حفر العينات لمناجم الذهب والحديد والأسمنت في الدرع العربي الغربي.",
     ind5Title: "المشاريع البحرية والساحلية",
     ind5Desc: "جس التربة البحرية وتخطيط القاع للموانئ والأرصفة والمصدات الساحلية.",
-    whyHeading: "لماذا دريل تك جيو",
+    whyHeading: "لماذا <span class='why-brand-highlight'>دريل تك جيو</span>",
     w1Title: "طاقم عمل محلي خبير",
     w1Desc: "سنوات من العمليات الميدانية المتخصصة في التعامل مع مختلف أنواع التربة بالمنطقة.",
     w2Title: "اختبارات موثقة مخبرياً",
@@ -225,12 +225,12 @@ const RIG_DATABASE = {
     pulldownPercent: 63,
     retract: "30,000 lbs",
     retractPercent: 75,
-    torque: "6,587 Nm",
-    torquePercent: 46,
-    depth: "1,500 ft (457 m)",
+    torque: "11,000 Nm",
+    torquePercent: 78,
+    depth: "457 m",
     depthPercent: 90,
-    engine: "Deutz Tier 3 Diesel, 116 hp",
-    auger: "4-1/4 in ID hollow: 250 ft",
+    engine: "Deutz F4L912, 116 hp",
+    auger: "4-1/4 in ID hollow: 76 m",
     type: "Rotary and DTH Capable"
   },
   cme45: {
@@ -243,10 +243,10 @@ const RIG_DATABASE = {
     retractPercent: 49,
     torque: "6,587 Nm",
     torquePercent: 46,
-    depth: "300 ft (continuous flight)",
+    depth: "91 m (continuous flight)",
     depthPercent: 25,
-    engine: "Cummins QSF 2.8, 65 hp",
-    auger: "Continuous flight 6 in OD: 300 ft",
+    engine: "Deutz F4L912, 116 hp",
+    auger: "Continuous flight 6 in OD: 91 m",
     type: "Compact High Torque"
   },
   b53: {
@@ -259,10 +259,10 @@ const RIG_DATABASE = {
     retractPercent: 60,
     torque: "8,932 Nm",
     torquePercent: 63,
-    depth: "1,200 ft (core drilling)",
+    depth: "366 m (core drilling)",
     depthPercent: 75,
     engine: "Cummins 4-cylinder 4BT, 420 lb-ft",
-    auger: "3-1/4 in ID hollow: 150 ft",
+    auger: "3-1/4 in ID hollow: 46 m",
     type: "Angle-drill Variable Gear"
   },
   joy12: {
@@ -275,7 +275,7 @@ const RIG_DATABASE = {
     retractPercent: 61,
     torque: "12,500 Nm",
     torquePercent: 88,
-    depth: "328 ft (100 m)",
+    depth: "100 m",
     depthPercent: 28,
     engine: "Diesel YC6A240-33, 177 kW",
     auger: "Mechanical rotary, mast tilts 45°",
@@ -291,7 +291,7 @@ const RIG_DATABASE = {
     retractPercent: 75,
     torque: "14,160 Nm",
     torquePercent: 100,
-    depth: "1,500+ ft",
+    depth: "457+ m",
     depthPercent: 100,
     engine: "Cummins QSB 4.5L, 140 hp",
     auger: "High capacity truck-mounted",
@@ -312,6 +312,7 @@ function init() {
   setupAnimatedCounters();
   setupContactForm();
   setupBentoGlowLoop();
+  setupIndustriesHighlightLoop();
 }
 
 // Language translation handler
@@ -909,90 +910,94 @@ function setupAnimatedCounters() {
 }
 
 function setupScrollAnimations() {
-  gsap.from(".about-text-content", {
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top 75%",
-    },
-    opacity: 0,
-    x: -35,
-    duration: 0.8,
-    ease: "power3.out"
-  });
+  gsap.fromTo(".about-text-content",
+    { opacity: 0, x: -35 },
+    {
+      scrollTrigger: { trigger: ".about-section", start: "top 75%", once: true },
+      opacity: 1, x: 0, duration: 0.8, ease: "power3.out",
+      immediateRender: false, clearProps: "opacity,transform"
+    }
+  );
 
-  gsap.from(".capability-box", {
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top 75%",
-    },
-    opacity: 0,
-    x: 35,
-    duration: 0.8,
-    ease: "power3.out"
-  });
+  gsap.fromTo(".capability-box",
+    { opacity: 0, x: 35 },
+    {
+      scrollTrigger: { trigger: ".about-section", start: "top 75%", once: true },
+      opacity: 1, x: 0, duration: 0.8, ease: "power3.out",
+      immediateRender: false, clearProps: "opacity,transform"
+    }
+  );
 
   const visualLefts = document.querySelectorAll(".reveal-left");
   visualLefts.forEach(el => {
-    gsap.from(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: "top 80%",
-      },
-      opacity: 0,
-      x: -80,
-      duration: 1.0,
-      ease: "power3.out"
-    });
+    gsap.fromTo(el,
+      { opacity: 0, x: -80 },
+      {
+        scrollTrigger: { trigger: el, start: "top 80%", once: true },
+        opacity: 1, x: 0, duration: 1.0, ease: "power3.out",
+        immediateRender: false, clearProps: "opacity,transform"
+      }
+    );
   });
 
   const visualRights = document.querySelectorAll(".reveal-right");
   visualRights.forEach(el => {
-    gsap.from(el, {
+    gsap.fromTo(el,
+      { opacity: 0, x: 80 },
+      {
+        scrollTrigger: { trigger: el, start: "top 80%", once: true },
+        opacity: 1, x: 0, duration: 1.0, ease: "power3.out",
+        immediateRender: false, clearProps: "opacity,transform"
+      }
+    );
+  });
+
+  gsap.fromTo(".bento-item",
+    { opacity: 0, y: 20 },
+    {
+      scrollTrigger: { trigger: ".bento-grid", start: "top 85%", once: true },
+      opacity: 1, y: 0, stagger: 0.08, duration: 0.6, ease: "power3.out",
+      immediateRender: false, clearProps: "opacity,transform"
+    }
+  );
+
+  gsap.fromTo(".industry-card-item",
+    { opacity: 0, x: -35 },
+    {
       scrollTrigger: {
-        trigger: el,
-        start: "top 80%",
+        trigger: ".industries-slider-container",
+        start: "top 85%",
+        once: true,
+        toggleActions: "play none none none"
       },
-      opacity: 0,
-      x: 80,
-      duration: 1.0,
-      ease: "power3.out"
-    });
-  });
+      opacity: 1,
+      x: 0,
+      stagger: 0.1,
+      duration: 0.8,
+      ease: "power3.out",
+      immediateRender: false,
+      clearProps: "opacity,transform"
+    }
+  );
 
-  gsap.from(".bento-item", {
-    scrollTrigger: {
-      trigger: ".bento-grid",
-      start: "top 85%",
-    },
-    y: 20,
-    stagger: 0.08,
-    duration: 0.6,
-    ease: "power3.out"
-  });
-
-  gsap.from(".industry-card-item", {
-    scrollTrigger: {
-      trigger: ".industries-slider-container",
-      start: "top 80%",
-    },
-    opacity: 0,
-    x: -35,
-    stagger: 0.1,
-    duration: 0.8,
-    ease: "power3.out"
-  });
-
-  gsap.from(".why-cell", {
-    scrollTrigger: {
-      trigger: ".why-box-grid",
-      start: "top 85%",
-    },
-    opacity: 0,
-    y: 20,
-    stagger: 0.06,
-    duration: 0.6,
-    ease: "power2.out"
-  });
+  gsap.fromTo(".why-cell",
+    { opacity: 0, y: 20 },
+    {
+      scrollTrigger: {
+        trigger: ".why-box-grid",
+        start: "top 85%",
+        once: true,
+        toggleActions: "play none none none"
+      },
+      opacity: 1,
+      y: 0,
+      stagger: 0.06,
+      duration: 0.6,
+      ease: "power2.out",
+      immediateRender: false,
+      clearProps: "opacity,transform"
+    }
+  );
 }
 
 function setupSpecsComparator() {
@@ -1092,6 +1097,56 @@ function setupBentoGlowLoop() {
     }, "+=0.15");
   });
 }
+
+function setupIndustriesHighlightLoop() {
+  const cards = document.querySelectorAll('.industry-card-item');
+  if (cards.length === 0) return;
+
+  let currentIndex = 0;
+  let isPaused = false;
+  let intervalId = null;
+
+  function activateCard(index) {
+    // Remove active from all
+    cards.forEach(c => {
+      c.classList.remove('industry-active');
+      // Re-trigger shimmer by forcing reflow
+      void c.offsetWidth;
+    });
+
+    // Add active to target
+    const card = cards[index];
+    card.classList.add('industry-active');
+
+    // Scroll into soft view if card is above viewport (optional smooth nudge)
+    const rect = card.getBoundingClientRect();
+    if (rect.top < 0 || rect.bottom > window.innerHeight) return;
+  }
+
+  function advance() {
+    if (isPaused) return;
+    currentIndex = (currentIndex + 1) % cards.length;
+    activateCard(currentIndex);
+  }
+
+  // Start with first card
+  activateCard(0);
+  intervalId = setInterval(advance, 2200);
+
+  // Pause on hover, resume on leave
+  cards.forEach((card, i) => {
+    card.addEventListener('mouseenter', () => {
+      isPaused = true;
+      cards.forEach(c => c.classList.remove('industry-active'));
+      card.classList.add('industry-active');
+      currentIndex = i;
+    });
+    card.addEventListener('mouseleave', () => {
+      isPaused = false;
+    });
+  });
+}
+
 
 if (document.readyState === "complete" || document.readyState === "interactive") {
   init();
